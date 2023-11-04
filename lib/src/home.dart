@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_navegacion/src/pages/direction_page.dart';
 
 class HomePages extends StatelessWidget {
   const HomePages({super.key});
@@ -23,8 +24,14 @@ class HomePages extends StatelessWidget {
         body: TabBarView(
           children: [
             _tabCar(),
-            Icon(Icons.directions_transit),
-            Icon(Icons.directions_bike),
+            const DirectionPage(),
+            const Center(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                  Text("Informacion de lugar"),
+                  Icon(Icons.bike_scooter)
+                ])),
           ],
         ),
       ),
@@ -33,9 +40,9 @@ class HomePages extends StatelessWidget {
 
   Widget _tabCar() {
     return const Center(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Informacion del vehiculo")]));
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      Text("Informacion del vehiculo"),
+      Icon(Icons.car_crash)
+    ]));
   }
 }
