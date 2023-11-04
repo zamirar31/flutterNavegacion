@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_navegacion/src/pages/direction_detail_page.dart';
 
 //class DirectionPage extends StatelessWidget {
   //const DirectionPage({super.key});
@@ -13,6 +14,7 @@ import 'package:flutter/material.dart';
   //}
 //}
 
+
 class DirectionPage extends StatelessWidget {
   const DirectionPage({super.key});
 
@@ -20,17 +22,17 @@ class DirectionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Second Route'),
+        title: const Text('First Route'),
       ),
       body: Center(
         child: ElevatedButton(
+          child: const Text('Open route'),
           onPressed: () {
-          Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const DirectionPage()),
-      );
-},
-          child: const Text('Go back!'),
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const DirectionDetailPage()),
+            );
+          },
         ),
       ),
     );
